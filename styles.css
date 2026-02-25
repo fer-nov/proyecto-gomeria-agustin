@@ -151,6 +151,7 @@ input, textarea {
 textarea {
     min-height: 100px;
     margin-bottom: 5px;
+    caret-color: black;
 }
 .boton {
     padding: 5px;
@@ -194,4 +195,25 @@ footer {
   to { transform: scale(1); opacity: 1; }
 }
 
+/* MEDIA QUERIES */
 
+@media (max-width: 768px) {
+    body {
+        background-color: whitesmoke;
+        margin-top: 130px;
+    }
+    input, textarea {
+    width: 80%;
+    height: 28px;
+    }
+    header {
+        padding-top: 8rem;
+        background-position: center;
+    }
+    .hero {
+        background-color: white;
+    }
+    footer {
+        padding: 30px;
+    }
+}
