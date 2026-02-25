@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gomería Agustín</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    
+  </header>
+
+  <!-- SERVICIOS -->
+  <section class="servicios">
+    <h2>🔧Servicios</h2>
+    <div class="grid">
+      <div>Parchado</div>
+      <!--<div>Reparación de pinchaduras</div>-->
+      <div>Inflado y calibrado</div>
+      <div>Cambio de cámaras y cubiertas</div>
+      <!--<div>Venta de cámaras</div>-->
+    </div>
+  </section>
+
+  <!-- VENTA -->
+   <section class="venta">
+    <h2>Venta</h2>
+    <div class="grid">
+        <div>Cámaras todos los rodados</div>
+        <div>Cubiertas usadas de autos y motos</div>
+    </div>
+   </section>
+
+  <!-- POR QUÉ ELEGIRNOS -->
+  <section class="beneficios">
+    <h2>¿Por qué elegirnos?</h2>
+    <div class="grid">
+      <div>  Atención rápida</div>
+      <div>  Estamos en pleno centro</div>
+      <div>  Precios accesibles</div>
+    </div>
+  </section>
+  <!-- QUIENES SOMOS -->
+   <section class="nosotros">
+    <h2>Quíenes somos</h2>
+    <div class="grid div-nosotros">
+        <p>Somos una pequeña empresa familiar con casi 5 años de experiencia, brindando soluciones rápidas y confiables para autos, motos y camionetas. Nos enfocamos en ofrecer el mejor servicio, precios accesibles y atención personalizada, porque sabemos que tu vehículo es parte de tu día a día.</p>
+    </div>
+   </section>
+  <!-- UBICACIÓN -->
+  <section class="ubicacion">
+    <h2>Ubicación</h2>
+    <p>  Av. Degen casi Belgrano - Ingeniero Juárez, Formosa</p>
+    <!--<iframe 
+      src="https://www.google.com/maps/embed?pb=..."
+      width="100%" 
+      height="300" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>-->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d455.9707649692426!2d-61.85470338433639!3d-23.897910758802965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1771940544677!5m2!1ses-419!2sar"
+        width="90%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <!-- HORARIOS -->
+  <section class="horarios">
+    <h2>Horarios</h2>
+    <p>Lunes a Sábado</p>
+    <p>8:00 a 13:00</p>
+    <p>16:00 a 21:00</p>
+  </section>
+
+  <!-- FORMULARIO -->
+   <form id="contact-form" class="formularios" action="https://formspree.io/f/xzdayjjj" method="post">
+
+
+        <h2 class="title-form">Envianos un mensaje</h2>
+        <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" inputmode="numeric" pattern="[0-9]" required>
+        <label>Mensaje:</label>
+        <textarea name="mensaje" rows="4" required></textarea>
+        <button type="submit" class="boton" >Enviar</button>
+    </form>
+  <!-- FOOTER -->
+  <footer>
+    <!--<p>📞 11-1234-5678</p>-->
+    <p>© 2026 Gomería Agustín</p>
+  </footer>
+
+  <!--<script>
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    form.innerHTML = "<p style='color:green;'>✅ Gracias por tu mensaje. Te contactaremos pronto.</p>";
+  } else {
+    form.innerHTML = "<p style='color:red;'>❌ Ocurrió un error. Intentá nuevamente.</p>";
+  }
+});
+</script>-->
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <p id="modal-message"></p>
+    <button id="modal-ok">OK</button>
+  </div>
+</div>
+
+<script>
+const form = document.getElementById("contact-form");
+const modal = document.getElementById("modal");
+const modalMessage = document.getElementById("modal-message");
+const modalOk = document.getElementById("modal-ok");
+
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    modalMessage.textContent = "✅ Gracias por tu mensaje. Te responderemos pronto.";
+  } else {
+    modalMessage.textContent = "❌ Ocurrió un error. Intentá nuevamente.";
+  }
+
+  modal.style.display = "flex";
+});
+
+modalOk.addEventListener("click", function() {
+  modal.style.display = "none";
+  form.reset(); // 🔥 vuelve el formulario a su estado inicial
+});
+</script>
+
+</body>
+</html>
