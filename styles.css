@@ -5,12 +5,16 @@
     font-family: "Roboto", sans-serif;
 }
 
+
 body {
   
   /*font-family: Arial, sans-serif;*/
   text-align: center;
   margin-top: 165px;
   line-height: 25px;
+}
+html, body {
+  overflow-x: hidden;
 }
 
 header {
@@ -31,7 +35,7 @@ header {
     top: 0;
     position: fixed;
     width: 100%;
-    
+    z-index: 1000;
 }
 
 .hero {
@@ -59,12 +63,13 @@ section {
 .grid {
   display: grid;
   gap: 15px;
+  /*text-shadow: 0 4px 9px rgba(255,255,255,0.7);*/
 }
 
 .servicios {
     background-color: rgb(32, 32, 65);
     color: whitesmoke;
-    transition: 0.4s all ease;
+    /*transition: 0.4s all ease;*/
 }
 .servicios, h2 {
     margin-bottom: 15px;
@@ -72,7 +77,8 @@ section {
 
 .venta {
     color: rgb(32, 32, 65);
-    transition: 0.4s;
+    background-color: whitesmoke;
+    /*transition: 0.4s;*/
 }
 
 .beneficios {
@@ -100,10 +106,13 @@ section {
   background: #ffc107;
   padding: 50px 20px;
 }*/
+.ubicacion {
+  color: rgb(32, 32, 65);
+}
 
 .beneficios,
 .horarios {
-  background-image: url("./imgs/llanta3.jpeg");
+  background-image: linear-gradient(rgba(0,0,0,0.4)), url("./imgs/llanta3.jpeg");
   background-size: cover;        /* que cubra todo */
   background-position: center;   /* centrada */
   background-repeat: no-repeat;
@@ -128,6 +137,9 @@ section {
   z-index: 1;
 }*/
 
+.titles {
+  font-size: 27px;
+}
 
 .grande {
   font-size: 18px;
@@ -194,6 +206,111 @@ footer {
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
+
+.contenido-servicios {
+  opacity: 0;
+  transform: translateX(-80px);
+  animation: aparecerServicios 0.8s ease-out forwards;
+}
+@keyframes aparecerServicios {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/*-----------------*/
+.servicios {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.servicios:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/*-----------------*/
+
+.contenido-venta {
+  opacity: 0;
+  transform: translateX(80px);
+  animation: aparecerVenta 0.8s ease-out forwards;
+}
+@keyframes aparecerVenta {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/*-----------------*/
+.venta {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.venta:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+/*-----------------*/
+
+.contenido-beneficios {
+  opacity: 0;
+  transform: translateX(-80px);
+  animation: aparecerBeneficios 0.8s ease-out forwards;
+}
+@keyframes aparecerBeneficios {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.contenido-nosotros {
+  opacity: 0;
+  transform: translateX(80px);
+  animation: aparecerNosotros 0.8s ease-out forwards;
+}
+@keyframes aparecerNosotros {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/*------------------------*/
+.nosotros {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.nosotros:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+/*------------------------*/
+
+.contenido-ubicacion {
+  opacity: 0;
+  transform: translateX(-80px);
+  animation: aparecerUbicacion 0.8s ease-out forwards;
+}
+@keyframes aparecerUbicacion {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.contenido-horarios {
+  opacity: 0;
+  transform: translateX(80px);
+  animation: aparecerHorarios 0.8s ease-out forwards;
+}
+@keyframes aparecerHorarios {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 /* MEDIA QUERIES */
 
