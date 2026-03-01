@@ -206,6 +206,19 @@ footer {
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+/*--------------------------------------------*/
+.hero {
+  opacity: 0;
+  transform: translateX(80px);
+  animation: aparecerHeader 0.8s ease-out forwards;
+}
+@keyframes aparecerHeader {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 
 .contenido-servicios {
@@ -219,7 +232,7 @@ footer {
     transform: translateX(0);
   }
 }
-/*-----------------*/
+/*-----------------
 .servicios {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -229,7 +242,7 @@ footer {
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-/*-----------------*/
+-----------------*/
 
 .contenido-venta {
   opacity: 0;
@@ -242,7 +255,7 @@ footer {
     transform: translateX(0);
   }
 }
-/*-----------------*/
+/*-----------------
 .venta {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -251,7 +264,7 @@ footer {
   transform: scale(1.02);
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
-/*-----------------*/
+-----------------*/
 
 .contenido-beneficios {
   opacity: 0;
@@ -276,7 +289,7 @@ footer {
     transform: translateX(0);
   }
 }
-/*------------------------*/
+/*------------------------
 .nosotros {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -285,7 +298,7 @@ footer {
   transform: scale(1.02);
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
-/*------------------------*/
+------------------------*/
 
 .contenido-ubicacion {
   opacity: 0;
@@ -311,26 +324,70 @@ footer {
   }
 }
 
+/* BOTON WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #25d366, #1ebe5d);
+  padding: 16px;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  animation: pulse 3s infinite;
+}
+.whatsapp-float:hover {
+  background: linear-gradient(135deg, #1ebe5d, #0fa047);
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+.whatsapp-float:focus {
+  outline: 3px solid #25d366;
+  outline-offset: 4px;
+}
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
 
 /* MEDIA QUERIES */
 
 @media (max-width: 768px) {
     body {
         background-color: whitesmoke;
-        margin-top: 130px;
+        margin-top: 110px;
     }
     input, textarea {
     width: 80%;
     height: 28px;
     }
     header {
-        padding-top: 8rem;
+        padding-top: 7rem;
         background-position: center;
+        
     }
     .hero {
         background-color: white;
     }
     footer {
         padding: 30px;
+    }
+
+    /* Botón de Whatsapp */
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        padding: 9px;
+        z-index: 0;
+    }
+    .whatsapp-float svg {
+        width: 24px;
+        height: 24px;
     }
 }

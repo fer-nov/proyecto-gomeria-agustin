@@ -1,4 +1,4 @@
-let startY = 0;
+/*let startY = 0;
 let currentY = 0;
 let isDragging = false;
 
@@ -23,4 +23,4 @@ window.addEventListener("wheel", (e) => {
 function resetPosition() {
   document.body.style.transform = "translateY(0)";
   currentY = 0;
-}
+}*/
