@@ -113,13 +113,17 @@ section {
 .beneficios,
 .horarios {
   background-image: linear-gradient(rgba(0,0,0,0.4)), url("./imgs/llanta3.jpeg");
-  background-size: cover;        /* que cubra todo */
-  background-position: center;   /* centrada */
+  background-size: cover;       
+  background-position: center; 
+
   background-repeat: no-repeat;
-  color: white;                  /* texto blanco */
+
+  color: white;
   padding: 80px 20px;
-  /*position: relative;*/
+  position: relative;
   background-attachment: fixed;
+
+  height: 120%;
 
 }
 
@@ -375,6 +379,11 @@ footer {
     .hero {
         background-color: white;
     }
+
+    /*.beneficios, .horarios {
+      background-attachment: scroll;
+    }*/
+
     footer {
         padding: 30px;
     }
